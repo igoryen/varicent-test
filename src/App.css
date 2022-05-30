@@ -1,38 +1,598 @@
 .App {
-  text-align: center;
+
+    background-color: #d9dbdb;
+    display: flex;
+    justify-content: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+
+.main-wrapper {
+    background-color: #fff;
+    box-shadow: 14px 25px 25px rgb(0 0 0 / 14%);
+    width: 1400px;
+}
+
+.section,
+.block {
+    /* border: 2px solid #eaecef; */
+    /* border-radius: 3px;
+    margin: 3px;
+    padding: 3px; */
+    width: 100%;
+}
+.block.user {
+    /* background-color: lightpink; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.block.user  .user__description {
+    margin-top: 1em;
+    width: 100%;
+}
+.block.repos {
+    width: 100%;
+}
+
+.section__top {
+    background-color: #25292e;
+    border-radius: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 1em 2em;
+}
+
+
+.section__top input {
+    background-color: #25292e;
+    border-radius: 4px;
+    border: 1px solid #464d55;
+    color: #c8c9ca;
+    height: 2em;
+    padding: 0.3em 0.7em;
+    width: 100%;
+    
+}
+
+.section__top input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #c8c9ca;
+    opacity: 1; /* Firefox */
+}
+  
+.section__top input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #c8c9ca;
+}
+
+.section__top input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #c8c9ca;
+}
+
+.section__top-half {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section__top-half--element {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 2em;
+    margin: 0 0.7em 0 0;
+}
+
+
+.section__top-half--element.search-element {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 8em;
+}
+.section__top-half--element.search-element button {
+
+    background-color: #25292e;
+    border-radius: 4px;
+    border: 1px solid #464d55;
+    color: #fff;
+    position: absolute;
+    right: 0.6em;
+    top: 0.5em;
+    width: 1.8em;
+    height: 1.8em;
+
+}
+
+.section__top-half--element.link {
+
+    font-size: 0.9em;
+    font-weight: 500;
+    margin: 0 0.8em 0 0;
+}
+
+.section__top-half--element img {
+    border-radius: 50%;
+    /* border: 2px solid #eaecef; */
+    vertical-align: middle;
+    width: 0.8em;
+}
+
+.section__top-half--element .notifications,
+.section__top-half--element .add {
+    font-size: 0.6em;
+}
+
+.section__top-half--element .notifications {
+    position: relative;
+}
+
+/* .section__top-half--element .notifications span {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+
+} */
+
+.section__top-half--element .notifications .circle {
+    font-size: 0.4em;
+    color: #007eff;
+    top: 3px;
+    right: -1px;
+    position: absolute;
+}
+
+.section__top-half--element .triangle {
+	border-color: #FFFFFF transparent transparent transparent;
+	border-style: solid;
+	border-width: 6px 6px 0 6px;
+	height: 0;
+    margin-left: 4px;
+    width: 0;
+}
+
+/*--------------------------------------------------*/
+.section__middle {
+    border-bottom: 2px solid #eaecef;
+    margin: 2em 0 0 0;
+}
+
+
+.section__middle div {
+}
+
+.section__middle--elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0 0 0;
+}
+
+
+
+
+.section__middle--element {
+    padding: 1em;
+}
+
+.section__middle--element:hover {
+    cursor: pointer;
+    background-color: #eaecef;
+}
+
+.section__middle--element .icon{
+    margin: 0 1em 0 0;
+    color: #969da4;
+}
+
+.section__middle--element .name {
+    color: #25292e;
+    font-weight: 400;
+}
+
+.section__middle--element .amount {
+    background-color: #e8eaec;
+    padding: 0.1em 0.6em;
+    border-radius: 20px;
+}
+
+.section__middle--element.active {
+    border-bottom: 3px solid #e68872;
+}
+
+.section__middle--element.active .icon,
+.section__middle--element.active .name,
+.section__middle--element.active .amount  {
+    margin: 0 1em 0 0;
+    color: #25292e;
+    font-weight: 600;
+    
+}
+
+/*--------------------------------------------------*/
+
+
+.chunk {
+    border-bottom: 2px solid #eaecef;
+    /* border-radius: 3px; */
+    
+    padding: 1.6em 0em;
+}
+
+.chunk.top-chunk input {
+    border-radius: 4px;
+    border: 1px solid #e2e4e8;
+    color: #6c737c;
+    height: 2em;
+    padding: 0.3em 0.7em;
+    width: 90%;
+}
+
+.chunk p {
+    margin: 0.3em 0;
+}
+
+.section__bottom {
+    display: flex;
+    
+    padding: 0 3em;
+}
+
+.avatar img {
+    border-radius: 50%;
+    border: 2px solid #eaecef;
+    
+    width: 17em;
+}
+
+.item.name {
+    color: #3065cf;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+.item__part--top {
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item__part--top button {
+
+    /* font-size: 2em; */
+    align-items: center;
+    background-color: #fafbfc;
+    border-radius: 7px;
+    border: 1px solid #d9dbdb;    
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    padding: 0.1em 1.1em 0px;
+
+}
+
+.item__part--top button .symbol {
+    align-items: center;
+    color: #6c737c;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 3px 5px 3px 1px;
+}
+
+.item__part--top button .button__label {
+    color: #25292e;
+    font-size: 1em;
+    font-weight: 600;
+} 
+/* star */
+/* 6c737c */
+
+/* .item__part--top button { */
+
+.item__part--middle {
+    color: #596068;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.item__part--bottom {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.item__part--bottom-element {
+    align-items: baseline;
+    color: #596068;
+    display: flex;
+    flex-direction: row;
+    
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-right: 1.4em;
+}
+
+.item__part--bottom-element .symbol {
+    font-size: 1.5em;
+    margin-right: 0.3em;
+}
+/* .item__part--bottom-element .symbol.star {
+    font-size: 2em;
+}
+.item__part--bottom-element .symbol.forks {
+    font-size: 1.7em;
+} */
+
+.item__part--bottom-element .symbol .lang {
+    background-color: gray;
+    border-radius: 50%;
+    display: block;
+    height: 15px;
+    width: 15px;
+}
+
+/* colors*/
+
+/* #cf5735  HTML*/
+
+.user__login {
+    color: #596068;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.user__name {
+    color: #25292e;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.user__bio {
+    font-weight: 500;
+}
+
+section.not-found {
+    color: #969da4;
+    height: 94vh;
+    
+}
+
+section.not-found h1 {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.item__part--bottom-element .symbol .lang.ABAP { background-color: #E8274B } 
+.item__part--bottom-element .symbol .lang.AMPL { background-color: #E6EFBB } 
+.item__part--bottom-element .symbol .lang.ANTLR { background-color: #9DC3FF } 
+.item__part--bottom-element .symbol .lang.APL { background-color: #5A8164 } 
+.item__part--bottom-element .symbol .lang.ASP { background-color: #6a40fd } 
+.item__part--bottom-element .symbol .lang.ATS { background-color: #1ac620 } 
+.item__part--bottom-element .symbol .lang.ActionScript { background-color: #882B0F } 
+.item__part--bottom-element .symbol .lang.Ada { background-color: #02f88c } 
+.item__part--bottom-element .symbol .lang.Agda { background-color: #315665 } 
+.item__part--bottom-element .symbol .lang.Alloy { background-color: #64C800 } 
+.item__part--bottom-element .symbol .lang.Arc { background-color: #aa2afe } 
+.item__part--bottom-element .symbol .lang.Arduino { background-color: #bd79d1 } 
+.item__part--bottom-element .symbol .lang.AspectJ { background-color: #a957b0 } 
+.item__part--bottom-element .symbol .lang.Assembly { background-color: #6E4C13 } 
+.item__part--bottom-element .symbol .lang.AutoHotkey { background-color: #6594b9 } 
+.item__part--bottom-element .symbol .lang.AutoIt { background-color: #1C3552 } 
+.item__part--bottom-element .symbol .lang.BlitzMax { background-color: #cd6400 } 
+.item__part--bottom-element .symbol .lang.Boo { background-color: #d4bec1 } 
+.item__part--bottom-element .symbol .lang.Brainfuck { background-color: #2F2530 } 
+.item__part--bottom-element .symbol .lang.C { background-color: #555555 } 
+.item__part--bottom-element .symbol .lang.CSS { background-color: #563d7c } 
+.item__part--bottom-element .symbol .lang.Chapel { background-color: #8dc63f } 
+.item__part--bottom-element .symbol .lang.Cirru { background-color: #ccccff } 
+.item__part--bottom-element .symbol .lang.Clarion { background-color: #db901e } 
+.item__part--bottom-element .symbol .lang.Clean { background-color: #3F85AF } 
+.item__part--bottom-element .symbol .lang.Click { background-color: #E4E6F3 } 
+.item__part--bottom-element .symbol .lang.Clojure { background-color: #db5855 } 
+.item__part--bottom-element .symbol .lang.CoffeeScript { background-color: #244776 } 
+.item__part--bottom-element .symbol .lang.ColdFusion { background-color: #ed2cd6 } 
+.item__part--bottom-element .symbol .lang.Common Lisp { background-color: #3fb68b } 
+.item__part--bottom-element .symbol .lang.Crystal { background-color: #776791 } 
+.item__part--bottom-element .symbol .lang.D { background-color: #ba595e } 
+.item__part--bottom-element .symbol .lang.DM { background-color: #447265 } 
+.item__part--bottom-element .symbol .lang.Dart { background-color: #00B4AB } 
+.item__part--bottom-element .symbol .lang.Diff { background-color: #88dddd } 
+.item__part--bottom-element .symbol .lang.Dogescript { background-color: #cca760 } 
+.item__part--bottom-element .symbol .lang.Dylan { background-color: #6c616e } 
+.item__part--bottom-element .symbol .lang.E { background-color: #ccce35 } 
+.item__part--bottom-element .symbol .lang.ECL { background-color: #8a1267 } 
+.item__part--bottom-element .symbol .lang.Eagle { background-color: #814C05 } 
+.item__part--bottom-element .symbol .lang.Eiffel { background-color: #946d57 } 
+.item__part--bottom-element .symbol .lang.Elixir { background-color: #6e4a7e } 
+.item__part--bottom-element .symbol .lang.Elm { background-color: #60B5CC } 
+.item__part--bottom-element .symbol .lang.EmberScript { background-color: #FFF4F3 } 
+.item__part--bottom-element .symbol .lang.Erlang { background-color: #B83998 } 
+.item__part--bottom-element .symbol .lang.FLUX { background-color: #88ccff } 
+.item__part--bottom-element .symbol .lang.FORTRAN { background-color: #4d41b1 } 
+.item__part--bottom-element .symbol .lang.Factor { background-color: #636746 } 
+.item__part--bottom-element .symbol .lang.Fancy { background-color: #7b9db4 } 
+.item__part--bottom-element .symbol .lang.Fantom { background-color: #dbded5 } 
+.item__part--bottom-element .symbol .lang.Forth { background-color: #341708 } 
+.item__part--bottom-element .symbol .lang.FreeMarker { background-color: #0050b2 } 
+.item__part--bottom-element .symbol .lang.Frege { background-color: #00cafe } 
+.item__part--bottom-element .symbol .lang.Glyph { background-color: #e4cc98 } 
+.item__part--bottom-element .symbol .lang.Gnuplot { background-color: #f0a9f0 } 
+.item__part--bottom-element .symbol .lang.Go { background-color: #375eab } 
+.item__part--bottom-element .symbol .lang.Golo { background-color: #88562A } 
+.item__part--bottom-element .symbol .lang.Gosu { background-color: #82937f } 
+.item__part--bottom-element .symbol .lang.Groovy { background-color: #e69f56 } 
+.item__part--bottom-element .symbol .lang.HTML { background-color: #e44b23 } 
+.item__part--bottom-element .symbol .lang.Handlebars { background-color: #01a9d6 } 
+.item__part--bottom-element .symbol .lang.Harbour { background-color: #0e60e3 } 
+.item__part--bottom-element .symbol .lang.Haskell { background-color: #29b544 } 
+.item__part--bottom-element .symbol .lang.Haxe { background-color: #df7900 } 
+.item__part--bottom-element .symbol .lang.Hy { background-color: #7790B2 } 
+.item__part--bottom-element .symbol .lang.IDL { background-color: #a3522f } 
+.item__part--bottom-element .symbol .lang.Io { background-color: #a9188d } 
+.item__part--bottom-element .symbol .lang.Ioke { background-color: #078193 } 
+.item__part--bottom-element .symbol .lang.Isabelle { background-color: #FEFE00 } 
+.item__part--bottom-element .symbol .lang.J { background-color: #9EEDFF } 
+.item__part--bottom-element .symbol .lang.JFlex { background-color: #DBCA00 } 
+.item__part--bottom-element .symbol .lang.JSONiq { background-color: #40d47e } 
+.item__part--bottom-element .symbol .lang.Java { background-color: #b07219 } 
+.item__part--bottom-element .symbol .lang.JavaScript { background-color: #f1e05a } 
+.item__part--bottom-element .symbol .lang.Julia { background-color: #a270ba } 
+.item__part--bottom-element .symbol .lang.KRL { background-color: #28431f } 
+.item__part--bottom-element .symbol .lang.Kotlin { background-color: #F18E33 } 
+.item__part--bottom-element .symbol .lang.LFE { background-color: #004200 } 
+.item__part--bottom-element .symbol .lang.LOLCODE { background-color: #cc9900 } 
+.item__part--bottom-element .symbol .lang.LSL { background-color: #3d9970 } 
+.item__part--bottom-element .symbol .lang.Lasso { background-color: #999999 } 
+.item__part--bottom-element .symbol .lang.Latte { background-color: #A8FF97 } 
+.item__part--bottom-element .symbol .lang.Lex { background-color: #DBCA00 } 
+.item__part--bottom-element .symbol .lang.LiveScript { background-color: #499886 } 
+.item__part--bottom-element .symbol .lang.LookML { background-color: #652B81 } 
+.item__part--bottom-element .symbol .lang.Lua { background-color: #000080 } 
+.item__part--bottom-element .symbol .lang.MAXScript { background-color: #00a6a6 } 
+.item__part--bottom-element .symbol .lang.MTML { background-color: #b7e1f4 } 
+.item__part--bottom-element .symbol .lang.Makefile { background-color: #427819 } 
+.item__part--bottom-element .symbol .lang.Mask { background-color: #f97732 } 
+.item__part--bottom-element .symbol .lang.Matlab { background-color: #bb92ac } 
+.item__part--bottom-element .symbol .lang.Max { background-color: #c4a79c } 
+.item__part--bottom-element .symbol .lang.Mercury { background-color: #ff2b2b } 
+.item__part--bottom-element .symbol .lang.Metal { background-color: #8f14e9 } 
+.item__part--bottom-element .symbol .lang.Mirah { background-color: #c7a938 } 
+.item__part--bottom-element .symbol .lang.NCL { background-color: #28431f } 
+.item__part--bottom-element .symbol .lang.Nemerle { background-color: #3d3c6e } 
+.item__part--bottom-element .symbol .lang.NetLinx { background-color: #0aa0ff } 
+.item__part--bottom-element .symbol .lang.NetLogo { background-color: #ff6375 } 
+.item__part--bottom-element .symbol .lang.NewLisp { background-color: #87AED7 } 
+.item__part--bottom-element .symbol .lang.Nimrod { background-color: #37775b } 
+.item__part--bottom-element .symbol .lang.Nit { background-color: #009917 } 
+.item__part--bottom-element .symbol .lang.Nix { background-color: #7e7eff } 
+.item__part--bottom-element .symbol .lang.Nu { background-color: #c9df40 } 
+.item__part--bottom-element .symbol .lang.OCaml { background-color: #3be133 } 
+.item__part--bottom-element .symbol .lang.Objective-C { background-color: #438eff } 
+.item__part--bottom-element .symbol .lang.Objective-J { background-color: #ff0c5a } 
+.item__part--bottom-element .symbol .lang.Omgrofl { background-color: #cabbff } 
+.item__part--bottom-element .symbol .lang.Opal { background-color: #f7ede0 } 
+.item__part--bottom-element .symbol .lang.Oxygene { background-color: #cdd0e3 } 
+.item__part--bottom-element .symbol .lang.Oz { background-color: #fab738 } 
+.item__part--bottom-element .symbol .lang.PAWN { background-color: #dbb284 } 
+.item__part--bottom-element .symbol .lang.PHP { background-color: #4F5D95 } 
+.item__part--bottom-element .symbol .lang.PLSQL { background-color: #dad8d8 } 
+.item__part--bottom-element .symbol .lang.Pan { background-color: #cc0000 } 
+.item__part--bottom-element .symbol .lang.Papyrus { background-color: #6600cc } 
+.item__part--bottom-element .symbol .lang.Parrot { background-color: #f3ca0a } 
+.item__part--bottom-element .symbol .lang.Pascal { background-color: #b0ce4e } 
+.item__part--bottom-element .symbol .lang.Perl { background-color: #0298c3 } 
+.item__part--bottom-element .symbol .lang.Perl6 { background-color: #0000fb } 
+.item__part--bottom-element .symbol .lang.PigLatin { background-color: #fcd7de } 
+.item__part--bottom-element .symbol .lang.Pike { background-color: #005390 } 
+.item__part--bottom-element .symbol .lang.PogoScript { background-color: #d80074 } 
+.item__part--bottom-element .symbol .lang.Processing { background-color: #0096D8 } 
+.item__part--bottom-element .symbol .lang.Prolog { background-color: #74283c } 
+.item__part--bottom-element .symbol .lang.Puppet { background-color: #302B6D } 
+.item__part--bottom-element .symbol .lang.PureBasic { background-color: #5a6986 } 
+.item__part--bottom-element .symbol .lang.PureScript { background-color: #1D222D } 
+.item__part--bottom-element .symbol .lang.Python { background-color: #3572A5 } 
+.item__part--bottom-element .symbol .lang.QML { background-color: #44a51c } 
+.item__part--bottom-element .symbol .lang.R { background-color: #198ce7 } 
+.item__part--bottom-element .symbol .lang.RAML { background-color: #77d9fb } 
+.item__part--bottom-element .symbol .lang.Racket { background-color: #22228f } 
+.item__part--bottom-element .symbol .lang.Rebol { background-color: #358a5b } 
+.item__part--bottom-element .symbol .lang.Red { background-color: #ee0000 } 
+.item__part--bottom-element .symbol .lang.Rouge { background-color: #cc0088 } 
+.item__part--bottom-element .symbol .lang.Ruby { background-color: #701516 } 
+.item__part--bottom-element .symbol .lang.Rust { background-color: #dea584 } 
+.item__part--bottom-element .symbol .lang.SAS { background-color: #B34936 } 
+.item__part--bottom-element .symbol .lang.SQF { background-color: #3F3F3F } 
+.item__part--bottom-element .symbol .lang.SaltStack { background-color: #646464 } 
+.item__part--bottom-element .symbol .lang.Scala { background-color: #DC322F } 
+.item__part--bottom-element .symbol .lang.Scheme { background-color: #1e4aec } 
+.item__part--bottom-element .symbol .lang.Self { background-color: #0579aa } 
+.item__part--bottom-element .symbol .lang.Shell { background-color: #89e051 } 
+.item__part--bottom-element .symbol .lang.Shen { background-color: #120F14 } 
+.item__part--bottom-element .symbol .lang.Slash { background-color: #007eff } 
+.item__part--bottom-element .symbol .lang.Slim { background-color: #ff8f77 } 
+.item__part--bottom-element .symbol .lang.Smalltalk { background-color: #596706 } 
+.item__part--bottom-element .symbol .lang.SourcePawn { background-color: #5c7611 } 
+.item__part--bottom-element .symbol .lang.Squirrel { background-color: #800000 } 
+.item__part--bottom-element .symbol .lang.Stan { background-color: #b2011d } 
+.item__part--bottom-element .symbol .lang.SuperCollider { background-color: #46390b } 
+.item__part--bottom-element .symbol .lang.Swift { background-color: #ffac45 } 
+.item__part--bottom-element .symbol .lang.SystemVerilog { background-color: #DAE1C2 } 
+.item__part--bottom-element .symbol .lang.Tcl { background-color: #e4cc98 } 
+.item__part--bottom-element .symbol .lang.TeX { background-color: #3D6117 } 
+.item__part--bottom-element .symbol .lang.Turing { background-color: #45f715 } 
+.item__part--bottom-element .symbol .lang.TypeScript { background-color: #2b7489 } 
+.item__part--bottom-element .symbol .lang.UnrealScript { background-color: #a54c4d } 
+.item__part--bottom-element .symbol .lang.VHDL { background-color: #adb2cb } 
+.item__part--bottom-element .symbol .lang.Vala { background-color: #fbe5cd } 
+.item__part--bottom-element .symbol .lang.Verilog { background-color: #b2b7f8 } 
+.item__part--bottom-element .symbol .lang.VimL { background-color: #199f4b } 
+.item__part--bottom-element .symbol .lang.Volt { background-color: #1F1F1F } 
+.item__part--bottom-element .symbol .lang.Vue { background-color: #2c3e50 } 
+.item__part--bottom-element .symbol .lang.X10 { background-color: #4B6BEF } 
+.item__part--bottom-element .symbol .lang.XC { background-color: #99DA07 } 
+.item__part--bottom-element .symbol .lang.XQuery { background-color: #5232e7 } 
+.item__part--bottom-element .symbol .lang.Zephir { background-color: #118f9e } 
+.item__part--bottom-element .symbol .lang.cpp { background-color: #f34b7d } 
+.item__part--bottom-element .symbol .lang.eC { background-color: #913960 } 
+.item__part--bottom-element .symbol .lang.edn { background-color: #db5855 } 
+.item__part--bottom-element .symbol .lang.nesC { background-color: #94B0C7 }
+.item__part--bottom-element .symbol .lang.ooc { background-color: #b0b77e } 
+.item__part--bottom-element .symbol .lang.wisp { background-color: #7582D1 } 
+.item__part--bottom-element .symbol .lang.xBase { background-color: #403a40 } 
+
+
+@media screen and (min-width: 320px) {
+   
+    .section__bottom {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 768px) {
+   
+    .section__bottom {
+        flex-direction: row;
+    }
+    .block.user {
+        margin-right: 2em;
+        margin-top: -2em;
+        width: 20em;
+    }
 }
