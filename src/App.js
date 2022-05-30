@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faCodeFork, faStar, faPlus, faBell, faCircle, faBookOpen, faCube, faChartColumn, faBookBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faCodeFork, faStar, faPlus, faBell, faCircle, faBookOpen, faCube, faChartColumn, faBookBookmark, faBars } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 
@@ -80,11 +80,16 @@ class App extends Component {
             <div className="App">
                 <div className='main-wrapper'>
                     <section className='section__top'>
+                        <div className='section__top-half mobile'>
+                            <div className='section__top-half--element'>
+                                <FontAwesomeIcon icon={faBars} />
+                            </div>
+                        </div>
                         <div className='section__top-half'>
                             <div className='section__top-half--element'>
                                 <FontAwesomeIcon icon={faGithub} />
                             </div>
-                            <div className='section__top-half--element search-element'>
+                            <div className='section__top-half--element link search-element'>
                                 <input ref={this.gh_username_ref} onKeyPress={this.handleKeypress} type="text" placeholder='Enter Github Username...' autoFocus></input>
                                 <button onClick={this.handleSubmit}>/</button>
                             </div>
@@ -104,7 +109,7 @@ class App extends Component {
                                     </span>
                                 </span>
                             </div>
-                            <div className='section__top-half--element'>
+                            <div className='section__top-half--element desktop'>
                                 <span className='add'>
                                     <FontAwesomeIcon icon={faPlus} />
                                 </span>
@@ -112,7 +117,7 @@ class App extends Component {
                             </div>
 
                             {this.state.isLoaded &&
-                                <div className='section__top-half--element'>
+                                <div className='section__top-half--element desktop'>
                                     <img src={this.state.mainSet.avatar_url} alt="User's Avatar" />
                                     <span className='triangle'></span>
                                 </div>
