@@ -93,7 +93,7 @@ class App extends Component {
                                 <input ref={this.gh_username_ref} onKeyPress={this.handleKeypress} type="text" placeholder='Enter Github Username...' autoFocus></input>
                                 <button onClick={this.handleSubmit}>/</button>
                             </div>
-                            <div className='section__top-half--element link'>Pull Requests</div>
+                            <div className='section__top-half--element link'>Pull<span className='desktop'>&nbsp;Request</span>s</div>
                             <div className='section__top-half--element link'>Issues</div>
                             <div className='section__top-half--element link'>Codespaces</div>
                             <div className='section__top-half--element link'>Marketplace</div>
